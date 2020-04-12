@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+      }
+      .container #allButton {
+        width: 80px;
+        float: left;
+        border: 0.5px solid #333;
+        height: 300px;
+      }
+      .container #allButton button {
+        width: 80px;
+        height: 60px;
+        border: 0.5px solid rgb(59, 47, 47);
+      }
+      .container #allImgs {
+        width: 200px;
+        height: 301.5px;
+        float: left;
+      }
+      .container div img {
+        width: 200px;
+        height: 301.5px;
+        display: none;
+      }
+      .container div .show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="allButton">
+        <button>猫咪</button>
+        <button>麋鹿</button>
+        <button>松鼠</button>
+        <button>豹子</button>
+        <button>兔子</button>
+      </div>
+      <div id="allImgs">
+        <img src="imgs/1.jpg" class="show" />
+        <img src="imgs/2.jpg" />
+        <img src="imgs/3.jpg" />
+        <img src="imgs/4.jpg" />
+        <img src="imgs/5.jpg" />
+      </div>
+    </div>
+    <script>
+      $("button").mouseover(function() {
+        var i = $(this).index();
+        $("img")
+          .eq(i)
+          .show()
+          .siblings()
+          .hide();
+      });
+    </script>
+  </body>
+</html>
