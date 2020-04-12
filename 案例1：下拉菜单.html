@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+      ul li {
+        list-style: none;
+      }
+      .container .li1 {
+        float: left;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+      }
+      .container .li1:hover {
+        background-color: rgb(156, 156, 240);
+      }
+      .container .L2 {
+        padding: 0;
+        display: none;
+      }
+      .container .L2 li {
+        width: 100px;
+        height: 36px;
+        line-height: 36px;
+        background-color: rgb(188, 188, 248);
+      }
+      .container .L2 li:hover {
+        background-color: rgb(156, 156, 240);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li class="li1">
+          <a href="#">栏目1</a>
+          <ul class="L2">
+            <li><a href="#">选项1</a></li>
+            <li><a href="#">选项2</a></li>
+            <li><a href="#">选项3</a></li>
+            <li><a href="#">选项4</a></li>
+          </ul>
+        </li>
+        <li class="li1">
+          <a href="#">栏目2</a>
+          <ul ul class="L2">
+            <li><a href="#">选项1</a></li>
+            <li><a href="#">选项2</a></li>
+            <li><a href="#">选项3</a></li>
+            <li><a href="#">选项4</a></li>
+          </ul>
+        </li>
+        <li class="li1">
+          <a href="#">栏目3</a>
+          <ul ul class="L2">
+            <li><a href="#">选项1</a></li>
+            <li><a href="#">选项2</a></li>
+            <li><a href="#">选项3</a></li>
+            <li><a href="#">选项4</a></li>
+          </ul>
+        </li>
+        <li class="li1">
+          <a href="#">栏目4</a>
+          <ul ul class="L2">
+            <li><a href="#">选项1</a></li>
+            <li><a href="#">选项2</a></li>
+            <li><a href="#">选项3</a></li>
+            <li><a href="#">选项4</a></li>
+          </ul>
+        </li>
+        <li class="li1">
+          <a href="#">栏目5</a>
+          <ul ul class="L2">
+            <li><a href="#">选项1</a></li>
+            <li><a href="#">选项2</a></li>
+            <li><a href="#">选项3</a></li>
+            <li><a href="#">选项4</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script>
+      $(".li1").mouseover(function() {
+        $(this)
+          .children("ul")
+          .show();
+      });
+      $(".li1").mouseout(function() {
+        $(this)
+          .children("ul")
+          .hide();
+      });
+    </script>
+  </body>
+</html>
