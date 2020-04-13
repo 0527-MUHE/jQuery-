@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        width: 600px;
+        height: 540px;
+        margin: 50px auto;
+        background-color: #333;
+      }
+      ul {
+        width: 600px;
+      }
+      ul li {
+        list-style: none;
+        float: left;
+        height: 270px;
+        cursor: pointer;
+      }
+      img {
+        width: 200px;
+        height: 270px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <ul>
+        <li><img src="imgs/1.jpg" /></li>
+        <li><img src="imgs/2.jpg" /></li>
+        <li><img src="imgs/3.jpg" /></li>
+        <li><img src="imgs/4.jpg" /></li>
+        <li><img src="imgs/5.jpg" /></li>
+        <li><img src="imgs/1.jpg" /></li>
+      </ul>
+    </div>
+    <script>
+      $("li").hover(
+        function() {
+          $(this)
+            .siblings()
+            .stop()
+            .fadeTo("fast", 0.4);
+        },
+        function() {
+          $(this)
+            .siblings()
+            .stop()
+            .fadeTo("fast", 1);
+        }
+      );
+    </script>
+  </body>
+</html>
