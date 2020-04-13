@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 900px;
+            background-color: #333;
+            padding: 10px;
+        }
+        ul li{
+            list-style: none;
+            position: relative;
+            float: left;
+            width: 69px;
+            height: 69px;
+            overflow: hidden;
+        }
+        .large{
+            /* display: none; */
+            width: 224px;
+        }
+        .small{
+            width: 69px;
+            height: 69px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .current {
+            width: 224px;
+        }
+        .current .small{
+            display: none;
+        }
+        .current .large{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul>
+            <li class="current">
+                <a href="#">
+                    <img src="images/a11.png" class="small">
+                    <img src="images/a1.png" class="large" >
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/a22.png" class="small">
+                    <img src="images/a2.png" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/a33.png" class="small" >
+                    <img src="images/a3.png" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/a44.png" class="small">
+                    <img src="images/a4.png" class="large" >
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/a55.png" class="small" >
+                    <img src="images/a5.png" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/a66.png" class="small">
+                    <img src="images/a6.png" class="large">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/a77.png" class="small">
+                    <img src="images/a7.png" class="large">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script>
+       $('li').mouseenter(function(){
+           $(this).stop().animate({width:224}).find('.small').fadeOut('fast').siblings('.large').fadeIn('fast');
+           $(this).siblings('li').stop().animate({width:69}).find('.small').fadeIn('fast').find('.large').fadeOut('fast')
+       })
+       
+    </script>
+</body>
+</html>
