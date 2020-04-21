@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <span>天猫欢迎您！</span>
+        <span>请登录</span>
+        <span id="login">免费注册</span>
+        <ul>
+            <li>我的订单</li>
+            <li>天猫会员</li>
+            <li>企业采购</li>
+            <li>关注天猫</li>
+            <li>客户服务</li>
+            <li>网站导航</li>
+        </ul>
+    </header>
+    <div class="container">
+        <div id="logo">
+            <img src="imgs/logo.png">
+        </div>
+        <div id="all">
+            全部商品
+        </div>
+        <div id="info">
+            <input type="checkbox"  id="all-checked">全选</input>
+            <span>商品</span>
+            <ul>
+                <li>小计</li>
+                <li>数量</li>
+                <li>单价</li>
+                <li>操作</li>
+            </ul>
+        </div>
+        <div id="items">
+            <ul>
+                <li class="items-li">
+                    <input type="checkbox">
+                    <div class="items-img"><img src="imgs/item1.jpg"></div>
+                    <span class="text">S925银森系小清新耳饰潮流韩国学院风花朵耳钉个性百搭街拍耳夹女 </span>
+                    <ul class="items-right">
+                        <li><span class="total">￥12.60</span></li>
+                        <li><span class="sub">-</span>
+                            <input type="text" value="1">
+                            <span class="add">+</span></li>
+                        <li><span class="unit-price">￥12.60</span></li>
+                        <li><span class="del">删除</span></li>
+                    </ul>
+                </li>
+                <li class="items-li">
+                    <input type="checkbox">
+                    <div class="items-img"><img src="imgs/item2.jpg"></div>
+                    <span class="text">时尚百搭唯美修颈日常穿搭锁骨链日韩国校园女神简约圆珠项链颈链  </span>
+                    <ul class="items-right">
+                        <li><span class="total">￥32.00</span></li>
+                        <li><span class="sub">-</span>
+                            <input type="text" value="1">
+                            <span class="add">+</span></li>
+                        <li><span class="unit-price">￥32.00</span></li>
+                        <li><span class="del">删除</span></li>
+                    </ul>
+                </li>
+                <li class="items-li">
+                    <input type="checkbox">
+                    <div class="items-img"><img src="imgs/item3.jpg"></div>
+                    <span class="text">S925银个性花卉耳饰简约百合花耳饰气质唯美淑女韵味无耳洞耳夹  </span>
+                    <ul class="items-right">
+                        <li><span class="total">￥12.60</span></li>
+                        <li><span class="sub">-</span>
+                            <input type="text" value="1">
+                            <span class="add">+</span></li>
+                        <li><span class="unit-price">￥12.60</span></li>
+                        <li><span class="del">删除</span></li>
+                    </ul>
+                </li>
+                <li class="items-li">
+                    <input type="checkbox">
+                    <div class="items-img"><img src="imgs/item4.jpg"></div>
+                    <span class="text">菲鹿儿16色眼影盘哑光珠光人鱼姬大地色沙漠玫瑰神仙十六色眼影盘  </span>
+                    <ul class="items-right">
+                        <li><span class="total">￥15.60</span></li>
+                        <li><span class="sub">-</span>
+                            <input type="text" value="1">
+                            <span class="add">+</span>
+                        </li>
+                        <li><span class="unit-price">￥15.60</span></li>
+                        <li><span class="del">删除</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <span class="count">总计：<b>0</b> 件</span>
+            <span class="money">总价: ￥<b>0</b></span>
+            <span>结 算</span>
+        </footer>
+    </div>
+    <script src="index.js"></script> 
+</body>
+</html>

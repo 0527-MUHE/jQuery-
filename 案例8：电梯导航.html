@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      header {
+        width: 100%;
+        height: 500px;
+        background-color: blueviolet;
+      }
+      .items {
+        position: fixed;
+        left: 60px;
+        top: 240px;
+        display: none;
+      }
+      .items div {
+        width: 60px;
+        height: 40px;
+        line-height: 40px;
+        cursor: pointer;
+        background-color: rosybrown;
+        text-align: center;
+      }
+      /* .items div:hover {
+        background-color: rgb(224, 96, 96);
+      } */
+      .items .now {
+        background-color: red;
+      }
+      .container {
+        width: 800px;
+        margin: 200px auto 500px;
+      }
+      .container div {
+        width: 800px;
+        height: 400px;
+        margin: 20px auto;
+        background-color: royalblue;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      头部内容
+    </header>
+    <div class="items">
+      <div class="now">导航1</div>
+      <div>导航2</div>
+      <div>导航3</div>
+      <div>导航4</div>
+      <div>导航5</div>
+    </div>
+    <div class="container">
+      <div>内容1</div>
+      <div>内容2</div>
+      <div>内容3</div>
+      <div>内容4</div>
+      <div>内容5</div>
+    </div>
+    <script>
+      $(function() {
+        // 节流阀，互斥锁：当点击小div时，网页会滚动，滚动又会触发修改div的class的事件，小div就会闪烁
+        // 解决思路：当我们点击小div后，不需要在滚动事件中再修改div的class
+        var flag = true;
+        $(window).scroll(function() {
+          var i = $(document).scrollTop();
+          if (i >= 400) {
+            $(".items ").show();
+          } else {
+            $(".items ").fadeOut();
+          }
+          // console.log(i);
+          // 页面移动时，电梯颜色也改变
+          if (flag) {
+            $(".container div").each(function(index, ele) {
+              if (i >= $(ele).offset().top) {
+                console.log(index);
+                $(".items div")
+                  .eq(index)
+                  .addClass("now")
+                  .siblings()
+                  .removeClass("now");
+              }
+            });
+          }
+        });
+
+        $(".items div").click(function() {
+          flag = false;
+          $(this)
+            .addClass("now")
+            .siblings()
+            .removeClass("now");
+          var i = $(this).index();
+          // console.log(i);
+          var current = $(".container div")
+            .eq(i)
+            .offset().top;
+          console.log(current);
+          $("body,html")
+            .stop()
+            .animate({ scrollTop: current },function(){
+              flag=true;
+            }
+            );
+        });
+      });
+    </script>
+  </body>
+</html>
