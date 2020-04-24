@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+      </ul>
+      <ol>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+      </ol>
+    </div>
+    <script>
+      // 隐式迭代：遍历内部DOM元素（伪数组形式存储）的过程
+      // 使用jQuery更改li背景颜色
+      $("ul li").css("background", "red");
+    </script>
+    <script>
+      // 使用js更改li背景颜色，需要自己循环遍历li元素
+      var allLI = document
+        .getElementsByTagName("ol")[0]
+        .getElementsByTagName("li");
+      for (var i = 0; i < allLI.length; i++) {
+        allLI[i].style.background = "green";
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>

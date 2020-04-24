@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      //   1.DOm对象转换为jQuery对象
+      //     （1）直接使用$符号
+      $("div");
+      //      (2)已经使用原生的js获取过来DOM对象
+      var myDiv = document.querySelector("div");
+      $(myDiv);
+      //   2.jQuery对像转换为DOM对象
+      $("div")[0];
+      $("div").get[0];
+    </script>
+  </body>
+</html>

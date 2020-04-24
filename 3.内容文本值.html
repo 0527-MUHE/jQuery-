@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div><span>111</span></div>
+    <input type="text" value="input的值" />
+    <script>
+      //  1. html();   获取元素内容
+      console.log($("div").html());
+      //     html("内容");   设置元素内容
+      $("div").html("html()");
+
+      //   2.text();   获取设置元素文本内容
+      console.log($("div").text());
+      $("div").text("text()");
+
+      //   3. val();  获取设置表单值
+      console.log($("input").val());
+      $("input").val("222");
+
+    </script>
+  </body>
+</html>
