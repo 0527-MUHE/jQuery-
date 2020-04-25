@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>原来的元素</li>
+        </ul>
+    </div>
+    <div class="text">
+        我是原先的div
+    </div>
+    <div class="del">
+        要删除的元素
+    </div>
+    <div class="empty" style="height: 20px; width: 100px; background-color: red;">
+        empty()方法
+        <div>111</div>
+        <div>222</div>
+    </div>
+    <script>
+        // 1.创建元素
+        var li1 = $("<li>添加在前面的li元素</li>")
+        var li2 =$("<li>添加在后面的li元素</li>")
+        var li3 = $("<li>添加在前面的li元素</li>")
+        var li4 =$("<li>添加在后面的li元素</li>")
+
+        // 2.添加元素
+        // （1）内部添加   
+        $("div ul").prepend(li1)   //把创建的li添加到div内部的最前面
+        $("div ul").append(li2);   //把创建的li添加到div内部的最后面
+        // （2）外部添加
+        $(".text").before(li3)   //把创建的li添加到div外部的最前面
+        $(".text").after(li4);   //把创建的li添加到div外部的最后面
+
+        // 3.删除元素   
+        //  (1)remove()   删除匹配的元素（本身）
+        $(".del").remove()
+        // （2）empty（）删除匹配元素集合中所有子节点(清空孩子·)
+        $(".empty").empty()
+        // （3）html("")   清空匹配元素内容，把里面内容修改为一个空字符串
+    </script>
+</body>
+
+</html>

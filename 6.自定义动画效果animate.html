@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script></script>
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button>点击div动起来</button>
+    <div></div>
+    <script>
+        $('button').click(function(){
+        $('div').animate({marginLeft:200,marginTop:200},500)
+      })
+    </script>
+  </body>
+</html>

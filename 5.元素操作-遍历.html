@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>111</div>
+    <div>222</div>
+    <div>333</div>
+    <script>
+        // 为每个div赋予不同的颜色
+        // $("div").each(function(index,domEle){xxx;})
+        var arr=["red","blue","grey"]
+        $("div").each(function(index,domEle){
+            // 回调函数的第一个参数一定是索引号，可以自己指定索引号名称
+            // 第二个参数一定是dom元素对象,要使用jQuery方法需要把他转换为jQuery对象
+            $(domEle).css("color",arr[index])
+        })
+    </script>
+    <script>
+        // 将所有div的值相加
+        var sum=0;
+        $("div").each(function(index,domEle){
+            sum+=parseInt($(domEle).text()) ;
+        })
+        // console.log(sum);
+    </script>
+
+    <!-- 方法二： -->
+    <script>
+
+        // $.each(Object,function(index,element){xxx;})
+    $.each($("div"),function(i,ele){
+        // console.log(i)
+    })
+    // 区别：主要用于数据处理
+    var number=[1,2,3]
+    var sum1=0
+    $.each(number,function(i,ele){
+        sum1+=parseInt(number[i]) 
+    })
+    console.log(sum1)
+    </script>
+</body>
+</html>
