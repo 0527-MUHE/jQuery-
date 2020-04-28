@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button>点击弹框</button>
+    <script>
+      $("button").on("click", function() {
+        alert("111");
+      });
+      //   trigger（）自动触发事件
+      // 1.元素.事件(简写模式)
+      //   $("button").click();
+      //   2.自动触发模式
+    //   $("button").trigger("click");
+      //   3.自动触发模式,和其他的区别在于：不会触发元素的默认行为（例如focus的闪烁光标）
+      $("button").triggerHandler("click");
+    </script>
+  </body>
+</html>

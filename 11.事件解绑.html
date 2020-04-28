@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      111
+    </div>
+    <button>解除div绑定事件</button>
+    <ul>
+      <li>1点击li</li>
+      <li>2点击li</li>
+      <li>3点击li</li>
+    </ul>
+    <script>
+      $("div").on({
+        mouseenter: function() {
+          $(this).text("鼠标进入");
+        },
+        mouseout: function() {
+          $(this).text("鼠标离开");
+        }
+      });
+      //   on委托事件，点击li，li隐藏
+      $("ul").on("click", "li", function() {
+        $(this).hide();
+      });
+      $("button").click(function() {
+        // 1.如果括号里面不填内容，会解绑所有事件
+        // $("div").off();
+        // 2.只解除mouseout事件
+        $("div").off("mouseout");
+      });
+      //3.解绑事件委托
+      $("ul").off("click", "li");
+    </script>
+  </body>
+</html>

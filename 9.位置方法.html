@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      .father {
+        width: 400px;
+        height: 400px;
+        background-color: gray;
+        position: relative;
+      }
+      .son {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+      }
+      .scoll {
+        width: 200px;
+        height: 1200px;
+        background-color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son"></div>
+    </div>
+    <div class="scoll"></div>
+    <script>
+      //    1. 获取设置距离文档的位置（偏移）   offset
+      console.log($(".son").offset());
+      console.log($(".son").offset({ top: 100, left: 100 }));
+      console.log($(".son").offset().top);
+      //   2.position（）方法用于返回被选元素相对于带有定位的父级偏移坐标，如果父级没有定位，则以文档为准
+      console.log($(".son").position());
+      //   3.scrollTop（）/scrolLeft（）设置或者获取元素被卷去的头部和左侧
+      $(window).scroll(function() {
+        console.log($(document).scrollTop());
+      });
+    </script>
+  </body>
+</html>

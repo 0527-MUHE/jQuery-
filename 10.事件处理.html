@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 20px;
+      }
+      .current {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+    <ul>
+      <li>111</li>
+      <li>222</li>
+    </ul>
+    <script>
+      // 1.单个事件注册
+      // 点击div，div切换颜色
+      $(".div1").click(function() {
+        $(this).css("backgroundColor", "skyblue");
+      });
+      // 2.事件处理
+      // 同时书写多个事件
+      $(".div2").on({
+        mouseenter: function() {
+          $(this).text("鼠标移入div");
+        },
+        click: function() {
+          $(this).text("鼠标点击div");
+          $(this).css("backgroundColor", "skyblue");
+        }
+      });
+      //   多个事件执行同一函数时
+      $(".div2").on("mouseenter mouseleave", function() {
+        $(this).toggleClass("current");
+      });
+      //   事件委派
+      // 事件绑定在ul身上，但是在ul里面的li上触发
+      $("ul").on("click", "li", function() {
+        $(this).hide();
+      });
+    </script>
+  </body>
+</html>

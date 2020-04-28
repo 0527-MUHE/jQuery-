@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+      .blue {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      div切换颜色
+    </div>
+    <script>
+      // one()只触发一次事件
+      $("div").one("click", function() {
+        $(this).toggleClass("blue");
+      });
+    </script>
+  </body>
+</html>
