@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      .box {
+        width: 600px;
+        padding: 20px;
+        margin: 50px auto 0;
+        text-align: center;
+        border: 1px solid black;
+      }
+      .box ul li {
+        position: relative;
+        text-align: left;
+        display: none;
+      }
+      .box ul li a {
+        position: absolute;
+        right: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="blog">
+      <span>博客发布</span>
+      <textarea name="" id="" cols="50" rows="8"></textarea>
+      <button class="btn">发布</button>
+      <ul></ul>
+    </div>
+    <script>
+      $(function() {
+        $(".btn").click(function() {
+          var i = $("textarea").val();
+          var li = $("<li></li>");
+          li.html(i + "<a href='javascript:;'>删除</a>");
+          console.log(i);
+          $("ul").prepend(li);
+          $("li").slideDown();
+          $("textarea").val("");
+        });
+        // 删除功能
+        // 由于此时的click不能给动态创建的a添加事件，使用on事件委托
+        $("ul").on("click", "a", function() {
+          $(this)
+            .parent()
+            .hide();
+        });
+      });
+    </script>
+  </body>
+</html>
